@@ -4,6 +4,8 @@
 
 #include <stdio.h>
 
+#define STATE_COUNT (2)
+
 
 class IState
 {
@@ -27,14 +29,29 @@ public:
 		printf("Manager Created!\n");
 	}
 
-	IState* stateList[1];
+	IState* stateList[STATE_COUNT];
 
-	IState* pCurrentState;
+  IState* pPreviousState = NULL;
+	IState* pCurrentState  = NULL;
 
 	void pickState()
 	{
-		stateList[0]->transition();
+    for(int i = 0; i < STATE_COUNT; i++)
+    {
+      stateList[i]->transition();
 
+      if( (pCurrentState != pPreviousState) &&
+          (pCurrentState != NULL ) )
+      {
+        if( pPreviousState != NULL )
+        {
+          pPreviousState->exit();
+        }
+        pPreviousState = pCurrentState;
+        pCurrentState->entry();
+        break;
+      }
+    }
 	}
 
 	void runState()
