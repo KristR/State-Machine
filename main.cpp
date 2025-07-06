@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "./state.hpp"
 
-// int userInput;
+int userInput;
 
 int main()
 {
@@ -20,13 +20,16 @@ int main()
 	someState.job();
 	someState.exit();
 
-	// scanf("%d", &userInput);
+	scanf("%d", &userInput);
+  printf("Stored input:%d\n", userInput);
 
 	// Run state selector method
 	myManager.pickState();
 
 	// Check if state has set pCurrentState to it's own address in the manager
 	printf("%p\n", myManager.pCurrentState);
+
+	myManager.runState();
 
 	return 0;
 }

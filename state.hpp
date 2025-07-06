@@ -37,6 +37,11 @@ public:
 
 	}
 
+	void runState()
+	{
+		pCurrentState->job();
+	}
+
 };
 
 
