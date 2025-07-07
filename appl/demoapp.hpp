@@ -9,8 +9,9 @@ void initDemo();
 void runDemo();
 
 typedef enum {
-  STATE_OPEN   = 0,
-  STATE_CLOSED = 1
+  STATE_NULL = 0,
+  STATE_OPEN,
+  STATE_CLOSED
 } state_e;
 
 class CTurnstileOpen: public IState
