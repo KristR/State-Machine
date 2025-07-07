@@ -9,7 +9,7 @@ void initDemo();
 void runDemo();
 
 typedef enum {
-  STATE_OPEN = 0,
+  STATE_OPEN   = 0,
   STATE_CLOSED = 1
 } currentState_e;
 
@@ -17,12 +17,6 @@ class CTurnstileOpen: public IState
 {
 private:
   CStateManager* pManager;
-  typedef enum {
-    OUTPUT_NOT_SENT = 0,
-    OUTPUT_SENT     = 1
-  } OutStatus_e;
-
-  OutStatus_e OutFlag = OUTPUT_NOT_SENT;
 
 public:
   CTurnstileOpen(CStateManager* pManager);
@@ -39,12 +33,6 @@ class CTurnstileClosed: public IState
 {
 private:
   CStateManager* pManager;
-  typedef enum {
-    OUTPUT_NOT_SENT = 0,
-    OUTPUT_SENT     = 1
-  } OutStatus_e;
-
-  OutStatus_e OutFlag = OUTPUT_NOT_SENT;
 
 public:
   CTurnstileClosed(CStateManager* pManager);
