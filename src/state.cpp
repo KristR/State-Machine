@@ -22,5 +22,8 @@ void CStateManager::pickState()
 
 void CStateManager::runState()
 {
-  pCurrentState->job();
+  if(pCurrentState != NULL)
+  {
+    pCurrentState->job();
+  }
 }
