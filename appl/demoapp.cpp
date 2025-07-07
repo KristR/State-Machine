@@ -45,7 +45,7 @@ void CTurnstileOpen::job()
 {
   if(OutFlag == OUTPUT_NOT_SENT)
   {
-    printf("Turnstile is open!\n");
+    outputStruct.currentState = STATE_OPEN;
     OutFlag = OUTPUT_SENT;
   }
 }
@@ -79,7 +79,7 @@ void CTurnstileClosed::job()
 {
   if(OutFlag == OUTPUT_NOT_SENT)
   {
-    printf("Turnstile is closed.\n");
+    outputStruct.currentState = STATE_CLOSED;
     OutFlag = OUTPUT_SENT;
   }
 }

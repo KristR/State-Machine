@@ -9,8 +9,11 @@ int main()
   
   while(true)
   {
-    scanf("%d", &inputStruct.userInput);
+    updateInput();
+    
     runDemo();
+    
+    updateOutput();
   }
   
   return 0;
