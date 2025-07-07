@@ -1,5 +1,5 @@
 #include "demoapp.hpp"
-#include "globals.hpp"
+#include "io.hpp"
 
 // Define state manager
 CStateManager myManager;

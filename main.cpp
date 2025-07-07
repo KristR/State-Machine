@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "./state.hpp"
 #include "./demoapp.hpp"
-#include "./globals.hpp"
+#include "./io.hpp"
 
 int main()
 {

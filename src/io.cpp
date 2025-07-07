@@ -1,4 +1,4 @@
-#include "globals.hpp"
+#include "io.hpp"
 
 inputStruct_t  inputStruct;
 outputStruct_t outputStruct;

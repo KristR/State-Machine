@@ -9,8 +9,7 @@ void initDemo();
 void runDemo();
 
 typedef enum {
-  STATE_NULL = 0,
-  STATE_OPEN,
+  STATE_OPEN = 0,
   STATE_CLOSED
 } state_e;
 
