@@ -4,22 +4,19 @@
 
 #include <stdio.h>
 #include "state.hpp"
-#include "globals.hpp"
 
 void initDemo();
 void runDemo();
 
+typedef enum {
+  STATE_OPEN = 0,
+  STATE_CLOSED
+} state_e;
 
 class CTurnstileOpen: public IState
 {
 private:
   CStateManager* pManager;
-  typedef enum {
-    OUTPUT_NOT_SENT = 0,
-    OUTPUT_SENT     = 1
-  } OutStatus;
-
-  OutStatus OutFlag = OUTPUT_NOT_SENT;
 
 public:
   CTurnstileOpen(CStateManager* pManager);
@@ -36,19 +33,9 @@ class CTurnstileClosed: public IState
 {
 private:
   CStateManager* pManager;
-  typedef enum {
-    OUTPUT_NOT_SENT = 0,
-    OUTPUT_SENT     = 1
-  } OutStatus;
-
-  OutStatus OutFlag = OUTPUT_NOT_SENT;
 
 public:
-  CTurnstileClosed(CStateManager* pManager) 
-  {
-    printf("Custom State Created!\n");
-    this->pManager = pManager;
-  };
+  CTurnstileClosed(CStateManager* pManager);
   ~CTurnstileClosed() {};
 
   void transition();

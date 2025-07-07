@@ -1,4 +1,5 @@
 #include "demoapp.hpp"
+#include "io.hpp"
 
 // Define state manager
 CStateManager myManager;
@@ -29,7 +30,7 @@ CTurnstileOpen::CTurnstileOpen(CStateManager* pManager)
 
 void CTurnstileOpen::transition()
 {
-  if(inputBuf == 1)
+  if(inputStruct.userInput == 1)
   {
     pManager->pCurrentState = this;
   }
@@ -42,16 +43,12 @@ void CTurnstileOpen::entry()
 
 void CTurnstileOpen::job()
 {
-  if(OutFlag == OUTPUT_NOT_SENT)
-  {
-    printf("Turnstile is open!\n");
-    OutFlag = OUTPUT_SENT;
-  }
+  outputStruct.currentState = STATE_OPEN;
 }
 
 void CTurnstileOpen::exit()
 {
-  OutFlag = OUTPUT_NOT_SENT;
+  // Do nothing
 }
 
 // ==================== CTurnstileClosed Member Definitions ====================
@@ -63,7 +60,7 @@ CTurnstileClosed::CTurnstileClosed(CStateManager* pManager)
 
 void CTurnstileClosed::transition()
 {
-  if(inputBuf == 2)
+  if(inputStruct.userInput == 2)
   {
     pManager->pCurrentState = this;
   }
@@ -76,16 +73,12 @@ void CTurnstileClosed::entry()
 
 void CTurnstileClosed::job()
 {
-  if(OutFlag == OUTPUT_NOT_SENT)
-  {
-    printf("Turnstile is closed.\n");
-    OutFlag = OUTPUT_SENT;
-  }
+  outputStruct.currentState = STATE_CLOSED;
 }
 
 void CTurnstileClosed::exit()
 {
-  OutFlag = OUTPUT_NOT_SENT;
+  // Do nothing
 }
 
 

@@ -6,7 +6,7 @@ INCL = -I ./includes/ \
 
 SRC = ./main.cpp \
 	  ./src/state.cpp \
-	  ./src/globals.cpp \
+	  ./src/io.cpp \
 	  ./appl/demoapp.cpp
 
 OBJ = $(SRC:.cpp=.o)

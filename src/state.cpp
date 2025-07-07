@@ -7,9 +7,9 @@ void CStateManager::pickState()
     stateList[i]->transition();
 
     if( (pCurrentState != pPreviousState) &&
-        (pCurrentState != NULL ) )
+        (pCurrentState != NULL) )
     {
-      if( pPreviousState != NULL )
+      if(pPreviousState != NULL)
       {
         pPreviousState->exit();
       }
@@ -22,5 +22,8 @@ void CStateManager::pickState()
 
 void CStateManager::runState()
 {
-  pCurrentState->job();
+  if(pCurrentState != NULL)
+  {
+    pCurrentState->job();
+  }
 }

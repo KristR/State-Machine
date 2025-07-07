@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "./state.hpp"
 #include "./demoapp.hpp"
-#include "./globals.hpp"
+#include "./io.hpp"
 
 int main()
 {
@@ -9,8 +9,11 @@ int main()
   
   while(true)
   {
-    scanf("%d", &inputBuf);
+    updateInput();
+    
     runDemo();
+    
+    updateOutput();
   }
   
   return 0;
