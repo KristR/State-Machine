@@ -9,7 +9,7 @@ int main()
   
   while(true)
   {
-    scanf("%d", &inputBuf);
+    scanf("%d", &inputStruct.userInput);
     runDemo();
   }
   

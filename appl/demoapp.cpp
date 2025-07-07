@@ -1,4 +1,5 @@
 #include "demoapp.hpp"
+#include "globals.hpp"
 
 // Define state manager
 CStateManager myManager;
@@ -29,7 +30,7 @@ CTurnstileOpen::CTurnstileOpen(CStateManager* pManager)
 
 void CTurnstileOpen::transition()
 {
-  if(inputBuf == 1)
+  if(inputStruct.userInput == 1)
   {
     pManager->pCurrentState = this;
   }
@@ -63,7 +64,7 @@ CTurnstileClosed::CTurnstileClosed(CStateManager* pManager)
 
 void CTurnstileClosed::transition()
 {
-  if(inputBuf == 2)
+  if(inputStruct.userInput == 2)
   {
     pManager->pCurrentState = this;
   }

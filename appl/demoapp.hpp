@@ -4,7 +4,6 @@
 
 #include <stdio.h>
 #include "state.hpp"
-#include "globals.hpp"
 
 void initDemo();
 void runDemo();
@@ -44,11 +43,7 @@ private:
   OutStatus OutFlag = OUTPUT_NOT_SENT;
 
 public:
-  CTurnstileClosed(CStateManager* pManager) 
-  {
-    printf("Custom State Created!\n");
-    this->pManager = pManager;
-  };
+  CTurnstileClosed(CStateManager* pManager);
   ~CTurnstileClosed() {};
 
   void transition();

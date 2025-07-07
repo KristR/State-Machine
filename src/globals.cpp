@@ -1,3 +1,4 @@
 #include "globals.hpp"
 
-int inputBuf = 0;
+inputStruct_t  inputStruct;
+outputStruct_t outputStruct;
