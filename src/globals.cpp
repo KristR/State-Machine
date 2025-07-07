@@ -10,5 +10,14 @@ void updateInput()
 
 void updateOutput()
 {
-  printf("Output:%d\n", outputStruct.currentState);
+  switch(outputStruct.currentState)
+  {
+    case STATE_OPEN:
+      printf("Turnstile is open!\n");
+      break;
+      
+    case STATE_CLOSED:
+      printf("Turnstile is closed.\n");
+      break;
+  }
 }

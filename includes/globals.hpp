@@ -10,7 +10,7 @@ typedef struct {
 } inputStruct_t;
 
 typedef struct {
-  currentState_e currentState;
+  state_e currentState;
 } outputStruct_t;
 
 void updateInput();

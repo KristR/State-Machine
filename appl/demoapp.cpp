@@ -44,16 +44,11 @@ void CTurnstileOpen::entry()
 void CTurnstileOpen::job()
 {
   outputStruct.currentState = STATE_OPEN;
-
-  // if(outputStruct.outputStatus == OUTPUT_NOT_SENT)
-  // {
-  //   outputStruct.outputStatus = OUTPUT_SENT;
-  // }
 }
 
 void CTurnstileOpen::exit()
 {
-  // outputStruct.outputStatus = OUTPUT_NOT_SENT;
+  // Do nothing
 }
 
 // ==================== CTurnstileClosed Member Definitions ====================
@@ -84,7 +79,6 @@ void CTurnstileClosed::job()
 void CTurnstileClosed::exit()
 {
   // Do nothing
-  // outputStruct.outputStatus = OUTPUT_NOT_SENT;
 }
 
 
